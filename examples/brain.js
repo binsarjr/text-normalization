@@ -4,7 +4,7 @@ import {
 } from "../src/encoding.js"
 
 function sentenceToObject(sentence) {
-    const words = sentence.toString().toLowerCase().replace(/[^a-zA-Z0-9]/g, ' ').split(/\s+/);
+    const words = sentence.toString().toLowerCase().split(/\s+/);
     const object = {};
 
     for (let i = 0; i < words.length; i++) {
