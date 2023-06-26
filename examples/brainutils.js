@@ -11,18 +11,10 @@ export function sentenceToObject(sentence) {
 
     return object;
 }
-export function getKeyOfMaxValue(obj) {
-    let maxKey = null;
-    let maxValue = -Infinity;
 
-    for (let key in obj) {
-        if (obj.hasOwnProperty(key)) {
-            if (obj[key] > maxValue) {
-                maxValue = obj[key];
-                maxKey = key;
-            }
-        }
-    }
+export function getKeyOfMaxValue(obj, level = 0, minimumRate = 0.8) {
+    const sortedKeys = Object.keys(obj).sort((a, b) => obj[b] - obj[a]);
+    const value = sortedKeys[level];
 
-    return maxKey;
+    return obj[value] >= minimumRate ? value : undefined
 }

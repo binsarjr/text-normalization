@@ -10,7 +10,10 @@
 	"scripts": {
 		"test": "echo \"Error: no test specified\" && exit 1"
 	},
-	"devDependencies": {
+	"dependencies": {
+		"sastrawijs": "^1.0.4"
+	},
+	"optionalDependencies": {
 		"brain.js": "2.0.0-beta.23"
 	}
 }

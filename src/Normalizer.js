@@ -22,7 +22,7 @@ export class Normalizer {
      */
     static cleanText(text) {
         // Menghapus karakter khusus, tanda baca, dan angka yang tidak relevan
-        const cleanedText = text.replace(/[^\w\s]/g, '');
+        const cleanedText = text.replace(/[^\w\s]/g, ' ');
 
         // Menghapus spasi berlebih
         const trimmedText = cleanedText.replace(/\s+/g, ' ').trim();
