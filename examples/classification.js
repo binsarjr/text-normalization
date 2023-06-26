@@ -2,20 +2,11 @@ import brain from "brain.js"
 import {
     encode
 } from "../src/encoding.js"
+import {
+    sentenceToObject
+} from "./brainutils.js"
 
-function sentenceToObject(sentence) {
-    const words = sentence.toString().toLowerCase().split(/\s+/);
-    const object = {};
 
-    for (let i = 0; i < words.length; i++) {
-        const word = words[i];
-        if (word !== '') {
-            object[word] = 1;
-        }
-    }
-
-    return object;
-}
 
 
 
@@ -27,48 +18,56 @@ const net = new brain.NeuralNetwork({
 net.train([{
         input: sentenceToObject(encode('terimakasih')),
         output: {
-            thank: 1
+            thank: 1,
+            id: 1
         }
     }, {
         input: sentenceToObject(encode('terima kasih')),
         output: {
-            thank: 1
+            thank: 1,
+            id: 1
         }
     },
     {
         input: sentenceToObject(encode('terima kasih banyak')),
         output: {
-            thank: 1
+            thank: 1,
+            id: 1
         }
     },
     {
         input: sentenceToObject(encode('tidak,terima kasih')),
         output: {
-            thank: 0
+            thank: 0,
+            id: 1
         }
     },
     {
         input: sentenceToObject(encode('terima kasih tapi boong')),
         output: {
-            thank: 0
+            thank: 0,
+            id: 1
         }
     },
     {
         input: sentenceToObject(encode("Masukkan kode otp")),
         output: {
-            information: 1
+            information: 1,
+            id: 1
         }
     },
     {
         input: sentenceToObject(encode("informasi")),
         output: {
-            information: 1
+            information: 1,
+            id: 1
         }
     }
 ])
 
 
 console.log(net.run(sentenceToObject(encode("makasih mas"))))
+console.log(net.run(sentenceToObject(encode("terima kasih banyak mas"))))
 console.log(net.run(sentenceToObject(encode("makasih mas tapi boong"))))
 console.log(net.run(sentenceToObject(encode("tidak,terima kasih"))))
 console.log(net.run(sentenceToObject(encode(`Hi YUDISTIRA ARYA MUTAMANG,
