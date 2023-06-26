@@ -44,7 +44,6 @@ bagian
 bahkan
 bahwa
 bahwasanya
-baik
 bakal
 bakalan
 balik
@@ -66,7 +65,6 @@ belakang
 belakangan
 belum
 belumlah
-benar
 benarkah
 benarlah
 berada
@@ -111,15 +109,11 @@ bertutur
 berujar
 berupa
 besar
-betul
 betulkah
 biasa
 biasanya
 bila
 bilakah
-bisa
-bisakah
-boleh
 bolehkah
 bolehlah
 buat
@@ -230,11 +224,7 @@ diucapkan
 diucapkannya
 diungkapkan
 dong
-dua
 dulu
-empat
-enggak
-enggaknya
 entah
 entahlah
 guna
@@ -243,10 +233,6 @@ hal
 hampir
 hanya
 hanyalah
-hari
-harus
-haruslah
-harusnya
 hendak
 hendaklah
 hendaknya
@@ -498,8 +484,6 @@ perlukah
 perlunya
 pernah
 persoalan
-pertama
-pertama-tama
 pertanyaan
 pertanyakan
 pihak
@@ -722,7 +706,6 @@ tetapi
 tiap
 tiba
 tiba-tiba
-tidak
 tidakkah
 tidaklah
 tiga
@@ -754,4 +737,4 @@ wong
 yaitu
 yakin
 yakni
-yang
+yan
