@@ -1,6 +1,4 @@
-import {
-    NeuralNetwork
-} from "brain.js"
+import brain from "brain.js"
 import {
     encode
 } from "../src/encoding.js"
@@ -21,7 +19,7 @@ function sentenceToObject(sentence) {
 
 
 
-const net = new NeuralNetwork({
+const net = new brain.NeuralNetwork({
     log: true,
 })
 
@@ -31,7 +29,7 @@ net.train([{
         output: {
             thank: 1
         }
-    },{
+    }, {
         input: sentenceToObject(encode('terima kasih')),
         output: {
             thank: 1
