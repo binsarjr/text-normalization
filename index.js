@@ -1,21 +1,29 @@
-import brain from 'brain.js'
 import {
-    encode,
-    serialize
-} from './src/serializer.js'
+    encode
+} from "./src/encoding.js"
 
-const net = new brain.NeuralNetwork({
-    activation: 'relu',
-    log: true,
-})
+const inputText = 'Ini adalah contoh teks yang akan dibersihkan dan difilter dari stopwords! nggk mas';
 
-net.train(serialize([{
-    input: 'terima kasih',
-    output: {
-        terimakasih: 1
-    }
-}]))
+console.log(encode(inputText))
 
+function normalizeRepeatedWords(text) {
+    const words = text.split(' ');
 
-let output = net.run(encode('terima kasih'))
-console.log(output)
+    const normalizedWords = words.map((word, index) => {
+        if (index < words.length - 1 && word === words[index + 1]) {
+            // Kata saat ini sama dengan kata berikutnya
+            return '';
+        }
+        return word;
+    });
+
+    const normalizedText = normalizedWords.filter(Boolean).join(' ');
+
+    return normalizedText;
+}
+
+// Contoh penggunaan fungsi normalizeRepeatedWords
+const inputText2 = 'malam malam ini aku pergi.';
+const normalizedText = normalizeRepeatedWords(inputText2);
+
+console.log('Teks yang Dinormalisasi:', normalizedText);
